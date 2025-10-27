@@ -1,0 +1,2 @@
+export type Quote={x402Version:'1';scheme:'solana:spl-transfer';network:'devnet'|'testnet'|'mainnet-beta';mint:string;payTo:string;amount:string;reference:string;description?:string;expiresAt:number;maxAmountRequired?:string;};
+export function buildPaymentRequirements(opts:{resource:string;mint:string;payTo:string;network:Quote['network']}):Quote{return{x402Version:'1',scheme:'solana:spl-transfer',network:opts.network,mint:opts.mint,payTo:opts.payTo,amount:'0.01',reference:crypto.randomUUID(),description:`Access ${opts.resource}`,expiresAt:60,maxAmountRequired:'0.01'};}
