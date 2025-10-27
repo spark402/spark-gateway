@@ -1,0 +1,1 @@
+export function buildQuote({resource}:{resource:string}){return{x402Version:'1',scheme:'solana:spl-transfer',network:process.env.NETWORK||'devnet',mint:process.env.MINT_PUBKEY||'',payTo:process.env.TREASURY_PUBKEY||'',amount:'0.01',reference:crypto.randomUUID(),description:`Access ${resource}`,expiresAt:Math.floor(Date.now()/1000)+Number(process.env.QUOTE_TTL_SEC||60)}}
